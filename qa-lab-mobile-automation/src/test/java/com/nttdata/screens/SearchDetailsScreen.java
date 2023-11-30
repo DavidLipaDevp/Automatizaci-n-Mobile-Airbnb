@@ -11,7 +11,6 @@ import java.util.concurrent.TimeUnit;
 
 public class SearchDetailsScreen extends PageObject {
 
-
     @AndroidFindBy(xpath="//android.widget.TextView[@text=\"Buscar destinos\"]")
     private WebElement searchDetailInput;
     @AndroidFindBy(id="com.airbnb.android:id/input_bar_input")
