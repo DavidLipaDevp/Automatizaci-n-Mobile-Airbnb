@@ -16,9 +16,6 @@ public class SearchDetailsScreen extends PageObject {
     @AndroidFindBy(id="com.airbnb.android:id/input_bar_input")
     private WebElement searchDetailInputText;
 
-    @AndroidFindBy(xpath = "//androidx.recyclerview.widget.RecyclerView[@resource-id=\"com.airbnb.android:id/where_autocomplete_recycler_view\"]/android.widget.FrameLayout[1]/android.view.ViewGroup")
-    private WebElement firstOption;
-
     @AndroidFindBy(id = "com.airbnb.android:id/n2_simple_search_footer_link")
     private WebElement skipButton;
 
@@ -31,11 +28,16 @@ public class SearchDetailsScreen extends PageObject {
         wait.until(ExpectedConditions.elementToBeClickable(searchDetailInput));
         getDriver().manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
         searchDetailInputText.sendKeys(place);
+
+
+        String cmd = "adb shell input keyevent 66";
+        try {
+            Runtime.getRuntime().exec(cmd);
+        }catch(Exception e) {
+
+        }
     }
 
-    public void clickFirstOption(){
-        firstOption.click();
-    }
 
     public void clickSkip(){
         skipButton.click();

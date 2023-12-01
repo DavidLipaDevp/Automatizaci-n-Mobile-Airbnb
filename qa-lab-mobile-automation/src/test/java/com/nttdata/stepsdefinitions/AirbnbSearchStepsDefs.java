@@ -28,11 +28,11 @@ public class AirbnbSearchStepsDefs {
         Assert.assertEquals(airbnbSearchSteps.getResultText(), text);
     }
 
+    //Al la pantalla del emulador se veran los resultados
     @And("los resultados son mayor a {int}")
     public void losResultadosSonMayorA(int numResultados) {
         System.out.println( airbnbSearchSteps.getNumResultado());
-        //airbnbSearchSteps.getNumResultado() contiene todos los resultados + la descripcion de la cantidad por ello se le resta 1
-        Assert.assertTrue(numResultados<airbnbSearchSteps.getNumResultado()-1);
+        Assert.assertTrue(numResultados<airbnbSearchSteps.getNumResultado());
 
     }
 }

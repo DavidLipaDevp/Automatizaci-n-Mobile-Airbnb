@@ -26,7 +26,6 @@ public class AirbnbSearchSteps {
     public void searchByText(String place){
         searchScreen.clickSearchInput();
         searchDetailsScreen.enterSearchInput(place);
-        searchDetailsScreen.clickFirstOption();
         searchDetailsScreen.clickSkip();
         searchDetailsScreen.clickSearch();
     }
@@ -37,6 +36,7 @@ public class AirbnbSearchSteps {
     }
     @Step("Obtiene resultados mayor a 1")
     public int getNumResultado(){
+        searchScreen.deslizarPantalla();
         return searchScreen.getContenidoResultado();
     }
 
